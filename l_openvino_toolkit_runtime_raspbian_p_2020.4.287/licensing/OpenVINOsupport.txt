@@ -1,0 +1,11 @@
+This package contains:
+        Intel(R) Distribution of OpenVINO(TM) toolkit 2020 for Windows* Target
+        Intel(R) Distribution of OpenVINO(TM) toolkit 2020 for Linux* Target
+
+-----------------
+Technical Support
+-----------------
+
+Need support? Go to https://software.intel.com/en-us/forums/intel-distribution-of-openvino-toolkit for your support options.
+Please refer to the Package ID included into the name of the installation package and installation directory of your copy of Intel(R) Distribution of OpenVINO(TM) toolkit.
+

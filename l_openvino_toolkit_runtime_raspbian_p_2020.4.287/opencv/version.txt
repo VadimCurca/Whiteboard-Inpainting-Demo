@@ -1,0 +1,15 @@
+4.4.0-43-g62eece0d7 (OpenVINO/2020.4)
+43
+releases/openvino/2020.4
+62eece0d7e67df1e79d9646f0870a90e56feca10
+
+General configuration for OpenCV 4.4.0-openvino =====================================
+  Version control:               62eece0d7e67df1e79d9646f0870a90e56feca10
+
+  Platform:
+    Timestamp:                   2020-06-29T23:48:54Z
+    Host:                        Linux 4.15.0-29-generic x86_64
+    Target:                      Linux 1 armv7l
+    CMake:                       3.7.2
+    CMake generator:             Ninja
+    CMake build tool:            /usr/bin/ninja
