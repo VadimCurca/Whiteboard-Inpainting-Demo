@@ -69,7 +69,7 @@ labels_map = None
 cap = cv2.VideoCapture('/dev/video0')
 ret, frame = cap.read()
 
-clean_frame = cap.copy()
+clean_frame = frame.copy()
 
 cur_request_id = 0
 next_request_id = 1
