@@ -1,0 +1,10 @@
+opencv_python_headless==4.5.5.64
+
+# downgrade becouse of dependencies issue
+# streamlit==0.82.0
+streamlit==0.62.0
+
+# mediapipe-rpi4 - maybe not needed
+
+numpy==1.18.5
+Pillow==8.2.0
