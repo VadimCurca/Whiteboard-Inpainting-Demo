@@ -41,6 +41,7 @@ st.markdown(
 )
 
 stframe = st.empty()
+stframe2 = st.empty()
 
 # --------------------------------------------------
 
@@ -67,6 +68,8 @@ labels_map = None
 
 cap = cv2.VideoCapture('/dev/video0')
 ret, frame = cap.read()
+
+clean_frame = cap.copy()
 
 cur_request_id = 0
 next_request_id = 1
@@ -100,18 +103,28 @@ while cap.isOpened():
                 ymin = int(obj[4] * initial_h)
                 xmax = int(obj[5] * initial_w)
                 ymax = int(obj[6] * initial_h)
-                class_id = int(obj[1])
-                # Draw box and label\class_id
-                color = (min(class_id * 12.5, 255), min(class_id * 7, 255), min(class_id * 5, 255))
-                cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), color, 2)
-                det_label = labels_map[class_id] if labels_map else str(class_id)
-                cv2.putText(frame, det_label + ' ' + str(round(obj[2] * 100, 1)) + ' %', (xmin, ymin - 7),
-                            cv2.FONT_HERSHEY_COMPLEX, 0.6, color, 1)
 
+                frame_crop = frame[ymin:ymax, xmin:xmax]
+                clean_frame_crop = clean_frame[ymin:ymax, xmin:xmax]
+                frame_crop[:] = clean_frame_crop
+                # clean_frame = frame.copy()
+                clean_frame = frame
+
+                if 0:
+                    class_id = int(obj[1])
+                    # Draw box and label\class_id
+                    color = (min(class_id * 12.5, 255), min(class_id * 7, 255), min(class_id * 5, 255))
+                    cv2.rectangle(frame, (xmin, ymin), (xmax, ymax), color, 2)
+                    det_label = labels_map[class_id] if labels_map else str(class_id)
+                    cv2.putText(frame, det_label + ' ' + str(round(obj[2] * 100, 1)) + ' %', (xmin, ymin - 7),
+                                cv2.FONT_HERSHEY_COMPLEX, 0.6, color, 1)
 
 
     #
+
+    #frame = cv2.Canny(frame, 100, 200)
     stframe.image(frame, channels = 'BGR', use_column_width=True)
+    stframe2.image(next_frame, channels = 'BGR', use_column_width=True)
 
     cur_request_id, next_request_id = next_request_id, cur_request_id
     frame = next_frame
