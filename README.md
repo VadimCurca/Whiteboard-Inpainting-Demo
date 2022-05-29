@@ -1,3 +1,4 @@
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/80581374/170887775-5649fe20-67c2-4fc1-b12f-45d35b37ea08.gif)
 
 # Whiteboard Inpainting Demo
 
@@ -9,6 +10,8 @@ The input comes from the Raspberry Camera, using Openvino Toolkit it is run thro
 The network output is the bounding box of the detected person.  
 If the person is detected this bounding box is cut and replaced with one on the same location but from a frame with a clean background.  
 An edge detection algorithm is also applied to highlight the whiteboard.
+
+![image](https://user-images.githubusercontent.com/80581374/170887922-13f483ed-7f5f-4dc0-ae76-162b9a6a3aa4.png)
 
 ### Components
 
