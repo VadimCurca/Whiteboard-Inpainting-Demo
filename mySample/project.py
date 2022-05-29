@@ -146,8 +146,8 @@ def run_infer():
                     xmax = int(obj[5] * initial_w)
                     ymax = int(obj[6] * initial_h)
 
-                    xmin -= 50
-                    ymin -= 50
+                    xmin = min(0, xmin - 50)
+                    ymin = min(0, xmin - 50)
                     xmax += 50
                     ymax += 50
 
